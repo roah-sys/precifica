@@ -1,0 +1,169 @@
+header {
+    width: 100%;
+    padding: 28px 8%;
+    position: relative;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav_logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#nav_logo i {
+    color: #6246E5;
+}
+
+.logo_nome {
+    color: #111A35;
+}
+
+.logo_plus {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+}
+
+.logo_plus::before,
+.logo_plus::after {
+    content: "";
+    position: absolute;
+    background-color: #6246E5;
+    border-radius: 2px;
+}
+
+.logo_plus::before {
+    width: 20px;
+    height: 5px;
+    top: 8px;
+    left: 0;
+}
+
+.logo_plus::after {
+    width: 5px;
+    height: 20px;
+    top: 0;
+    left: 8px;
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+}
+
+.nav-item.active a {
+    color: #111A35;
+    border-bottom: 3px solid #6246E5;
+}
+
+#mobile_btn {
+    display: none;
+}
+
+#mobile_menu {
+    display: none;
+}
+
+
+/* ===== TABLET ≤ 768px ===== */
+@media screen and (max-width: 768px) {
+
+    #nav_logo {
+        font-size: 20px;
+        gap: 5px;
+    }
+
+    .logo_plus {
+        width: 21px;
+        height: 21px;
+    }
+
+    .logo_plus::before {
+        width: 21px;
+        height: 5px;
+        top: 8px;
+    }
+
+    .logo_plus::after {
+        width: 5px;
+        height: 21px;
+        left: 8px;
+    }
+
+    /* Menu desktop some, hamburguer aparece */
+    #nav_list {
+        display: none;
+    }
+
+    #mobile_btn {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #111A35;
+        background: none;
+        border: none;
+    }
+
+    #mobile_menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #F5F7FA;
+        padding: 20px 8%;
+        gap: 16px;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+        z-index: 10;
+    }
+
+    #mobile_menu.active {
+        display: flex;
+    }
+}
+
+
+/* ===== CELULAR ≤ 480px ===== */
+@media screen and (max-width: 480px) {
+
+    #nav_logo {
+        font-size: 18px;
+        gap: 4px;
+    }
+
+    .logo_plus {
+        width: 18px;
+        height: 18px;
+    }
+
+    .logo_plus::before {
+        width: 18px;
+        height: 4px;
+        top: 7px;
+    }
+
+    .logo_plus::after {
+        width: 4px;
+        height: 18px;
+        left: 7px;
+    }
+}

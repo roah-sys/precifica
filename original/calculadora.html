@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <title>PRECIFICA (versão original)</title>
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div id="nav_logo">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+        <span class="logo_nome">PRECIFICA</span>
+        <span class="logo_plus">+</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="container">
+    <section id="img">
+      <img src="../src/image/finance.png" alt="Ilustração financeira">
+    </section>
+
+    <section id="calculator">
+      <form id="form" novalidate>
+        <h1 id="title">Cálculo de Precificação</h1>
+
+        <div class="input-box"><label for="categoria">Qual é o produto que você deseja vender?</label></div>
+        <div class="input-field">
+          <i class="fa-brands fa-shopify"></i>
+          <select id="categoria" required>
+            <option value="">Selecione</option>
+            <option value="doces">Doces e bolos</option>
+            <option value="salgados">Salgados</option>
+            <option value="marmitas">Marmitas</option>
+            <option value="bijuterias">Bijuterias</option>
+          </select>
+        </div>
+        <p id="dica" class="dica" hidden></p>
+        <button type="button" id="exemplo" class="link" hidden>Preencher com o exemplo</button>
+
+        <div class="grade">
+          <div class="input-box"><label for="ing" id="l-ing">Ingredientes (R$)</label><div class="input_sale"><i class="fa-solid fa-coins"></i><input id="ing" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0,00"></div></div>
+          <div class="input-box"><label for="desp">Despesas: gás, água, energia (R$)</label><div class="input_sale"><i class="fa-solid fa-bolt"></i><input id="desp" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0,00"></div></div>
+          <div class="input-box"><label for="mao">Mão de obra (R$)</label><div class="input_sale"><i class="fa-solid fa-hands"></i><input id="mao" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0,00"></div></div>
+          <div class="input-box"><label for="emb">Embalagem (R$)</label><div class="input_sale"><i class="fa-solid fa-box"></i><input id="emb" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0,00"></div></div>
+          <div class="input-box"><label for="un" id="l-un">Unidades produzidas</label><div class="input_sale"><i class="fa-solid fa-calculator"></i><input id="un" type="number" step="1" min="1" inputmode="numeric" placeholder="1"></div></div>
+          <div class="input-box"><label for="margem">Margem de lucro (%)</label><div class="input_sale"><i class="fa-solid fa-percent"></i><input id="margem" type="number" step="1" min="0" max="99" inputmode="decimal" placeholder="40"></div></div>
+        </div>
+        <div class="input-box"><label for="ref">Preço de referência no mercado, por unidade (R$) — opcional</label><div class="input_sale"><i class="fa-solid fa-tag"></i><input id="ref" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0,00"></div></div>
+
+        <p class="formula">Preço = custo por unidade ÷ (1 − margem)</p>
+        <p id="erro" class="erro" role="alert" hidden></p>
+        <button type="submit" id="calculate">Calcule</button>
+      </form>
+
+      <div id="resultado" aria-live="polite">
+        <p class="vazio">Escolha o produto, informe os custos do lote e calcule. O preço sugerido aparece aqui.</p>
+      </div>
+
+      <div id="more_info">
+        <a href="https://fatecosasco.cps.sp.gov.br/gestao-financeira/" target="_blank">
+          Ficou interessado nos cálculos de custos? Saiba mais
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../src/javascript/script.js"></script>
+</body>
+</html>
